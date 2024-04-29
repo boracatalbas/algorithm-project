@@ -1,0 +1,86 @@
+{
+  "books": [
+    {
+      "title": "The Night Circus",
+      "author": "Erin Morgenstern",
+      "year": 2011,
+      "page_count": 387,
+      "topic": "A magical competition between two young illusionists",
+      "rental_start_date": "2024-04-01",
+      "rental_end_date": "2024-04-15"
+    },
+    {
+      "title": "1984",
+      "author": "George Orwell",
+      "year": 1949,
+      "page_count": 328,
+      "topic": "Dystopian society and government surveillance",
+      "rental_start_date": "2024-03-20",
+      "rental_end_date": "2024-04-03"
+    },
+    {
+      "title": "Mockingbird",
+      "author": "Harper Lee",
+      "year": 1960,
+      "page_count": 281,
+      "topic": "Racial injustice in the Deep South",
+      "rental_start_date": "2024-01-15",
+      "rental_end_date": "2024-01-29"
+    },
+    {
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "year": 1925,
+      "page_count": 218,
+      "topic": "The American dream and 1920s society",
+      "rental_start_date": "2024-02-12",
+      "rental_end_date": "2024-02-26"
+    },
+    {
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "year": 1813,
+      "page_count": 432,
+      "topic": "British gentry, marriage, and morality",
+      "rental_start_date": "2024-05-01",
+      "rental_end_date": "2024-05-15"
+    },
+    {
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "year": 1937,
+      "page_count": 310,
+      "topic": "A hobbit's quest to win a share of the treasure guarded by a dragon",
+      "rental_start_date": "2024-03-01",
+      "rental_end_date": "2024-03-15"
+    },
+    {
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "year": 1951,
+      "page_count": 234,
+      "topic": "Teenage angst and alienation",
+      "rental_start_date": "2024-04-10",
+      "rental_end_date": "2024-04-24"
+    },
+
+    {
+      "title": "Brave New World",
+      "author": "Aldous Huxley",
+      "year": 1932,
+      "page_count": 311,
+      "topic": "A dystopian future society based on technological advances",
+      "rental_start_date": "2024-02-15",
+      "rental_end_date": "2024-03-01"
+    },
+    {
+      "title": "The Fault in Our Stars",
+      "author": "John Green",
+      "year": 2012,
+      "page_count": 313,
+      "topic": "The story of cancer patients finding love",
+      "rental_start_date": "2024-03-10",
+      "rental_end_date": "2024-03-24"
+    }
+  ]
+}
