@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import bookDatas from "../bookDatas.json";
 import userDatas from "../users.json";
 import bookImg from "../assets/book.png";
@@ -12,13 +12,51 @@ export default function Books({ rentedBooks, setRentedBooks }) {
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
   const [showUserDropdown, setShowUserDropdown] = useState(false);
-  const [currentUser, setCurrentUser] = useState("Select User");
+  const [currentUser, setCurrentUser] = useState({
+    id: "",
+    name: "Select User",
+  });
+
+  const [bookStatus, setBookStatus] = useState({});
+
+  useEffect(() => {
+    const status = {};
+    bookDatas.books.forEach((book) => {
+      status[book.title] = !!rentedBooks.find((rb) => rb.title === book.title);
+    });
+    setBookStatus(status);
+  }, [rentedBooks]);
 
   const handleRent = (book) => {
-    setRentedBooks([
-      ...rentedBooks,
-      { ...book, rental_start_date: startDate, rental_end_date: endDate },
-    ]);
+    if (currentUser.name === "Select User") {
+      alert("Please select a user before renting a book.");
+      return;
+    }
+
+    const today = new Date();
+    if (startDate <= today) {
+      alert("Please select a start date that is not in the past.");
+      return;
+    }
+
+    if (endDate < startDate) {
+      alert("End date should be after start date.");
+      return;
+    }
+
+    if (bookStatus[book.title]) {
+      alert("This book is already rented.");
+      return;
+    }
+
+    const newRental = {
+      ...book,
+      rental_start_date: startDate.toISOString().substring(0, 10),
+      rental_end_date: endDate.toISOString().substring(0, 10),
+      userId: currentUser.id,
+      isRented: true,
+    };
+    setRentedBooks([...rentedBooks, newRental]);
   };
 
   const toggleUserDropdown = () => {
@@ -26,14 +64,14 @@ export default function Books({ rentedBooks, setRentedBooks }) {
   };
 
   const handleUserSelect = (user) => {
-    setCurrentUser(user.name);
+    setCurrentUser(user);
     setShowUserDropdown(false);
   };
 
   return (
     <div className="App">
       <header className="header">
-        <img src={logo} alt="" />
+        <img src={logo} alt="logo" />
         <div className="header-buttons">
           <Link to="/">
             <button>Books</button>
@@ -41,14 +79,14 @@ export default function Books({ rentedBooks, setRentedBooks }) {
           <Link to="/rented-books">
             <button>Rented Books</button>
           </Link>
-          <button onClick={toggleUserDropdown}>{currentUser}</button>
+          <button onClick={toggleUserDropdown}>{currentUser.name}</button>
           {showUserDropdown && (
             <div className="user-dropdown">
               {userDatas.users.map((user) => (
                 <div
                   key={user.id}
                   onClick={() => handleUserSelect(user)}
-                  className="user-dropdown-item"
+                  className="item"
                 >
                   {user.name}
                 </div>
@@ -61,7 +99,7 @@ export default function Books({ rentedBooks, setRentedBooks }) {
       <div className="content">
         {bookDatas.books.map((book, index) => (
           <div key={index} className="books">
-            <img src={bookImg} alt="" />
+            <img src={bookImg} alt="book cover" />
             <div className="text-wrapper">
               <div style={{ display: "flex" }}>
                 <h1>{book.title}</h1>
@@ -79,8 +117,12 @@ export default function Books({ rentedBooks, setRentedBooks }) {
                 onChange={(date) => setEndDate(date)}
               />
             </div>
-            <button className="button" onClick={() => handleRent(book)}>
-              Rent
+            <button
+              className="button"
+              onClick={() => handleRent(book)}
+              disabled={bookStatus[book.title]}
+            >
+              {bookStatus[book.title] ? "Rented" : "Rent"}
             </button>
           </div>
         ))}

@@ -35,6 +35,19 @@
     img {
       height: 15vh;
     }
+    .user-dropdown {
+      position: absolute;
+      right: 2.5vw;
+      .item {
+        border: solid 1px white;
+        background-color: white;
+        color: #095256;
+        padding: 1vh 2.5vw;
+        &:hover {
+          border: solid 1px #095256;
+        }
+      }
+    }
   }
   img {
     height: 25vh;
@@ -43,8 +56,8 @@
   .content {
     margin-top: 3vh;
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 eşit kolon oluşturur */
-    gap: 1vw; /* Aralara boşluk ekler */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1vw;
     .books {
       margin-top: 1vw;
       width: 30vw;
