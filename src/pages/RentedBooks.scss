@@ -1,5 +1,15 @@
 .rented {
   background-color: #aec6cf;
+  .user-name {
+    display: flex;
+    margin-left: 2vw;
+    margin-top: 5vh;
+    background-color: #095256;
+    width: fit-content;
+    padding: 1vh 1vw;
+    color: white;
+    border-radius: 10px;
+  }
   .header {
     color: white;
     background-color: #095256;
@@ -29,18 +39,27 @@
     }
   }
   .content {
-    margin-top: 5vh;
+    margin-top: 3vh;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1vw;
+    &.blurred {
+      filter: blur(5px);
+      background-color: rgba(9, 82, 86, 0.5);
+    }
+
     .books {
+      img {
+        height: 25vh;
+        margin-left: 1vw;
+      }
       margin-top: 1vw;
       width: 30vw;
       height: 33vh;
       display: flex;
       background-color: #095256;
       border-radius: 10px;
-      color: white;
+      color: wheat;
       margin-left: 1.75vw;
       align-items: center;
       margin-bottom: 3vh;

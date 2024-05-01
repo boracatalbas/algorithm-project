@@ -29,18 +29,25 @@ export default function Books({ rentedBooks, setRentedBooks }) {
 
   const handleRent = (book) => {
     if (currentUser.name === "Select User") {
-      alert("Please select a user before renting a book.");
+      alert("Please select a user before renting a book");
       return;
     }
 
     const today = new Date();
     if (startDate <= today) {
-      alert("Please select a start date that is not in the past.");
+      alert("Please select a start date that is not in the past");
       return;
     }
 
     if (endDate < startDate) {
       alert("End date should be after start date.");
+      return;
+    }
+    const diffTime = Math.abs(endDate - startDate);
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+    if (diffDays > 31) {
+      alert("You can rent a book for a maximum of 30 days");
       return;
     }
 
@@ -95,11 +102,24 @@ export default function Books({ rentedBooks, setRentedBooks }) {
           )}
         </div>
       </header>
-      <h3>AVAILABLE BOOKS</h3>
-      <div className="content">
+
+      {!currentUser.id ? (
+        <p className="select-user-message">
+          Please select a user to proceed with renting books
+        </p>
+      ) : (
+        <div>
+          {" "}
+          <h3>AVAILABLE BOOKS</h3>
+          <span>
+            You can rent a book for a minimum 1 day and maximum of 30 days
+          </span>
+        </div>
+      )}
+      <div className={`content ${currentUser.id ? "" : "blurred"}`}>
         {bookDatas.books.map((book, index) => (
           <div key={index} className="books">
-            <img src={bookImg} alt="book cover" />
+            <img src={book.imgDir} alt="book cover" />
             <div className="text-wrapper">
               <div style={{ display: "flex" }}>
                 <h1>{book.title}</h1>

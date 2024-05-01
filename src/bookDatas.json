@@ -7,7 +7,8 @@
       "page_count": 387,
       "topic": "A magical competition between two young illusionists",
       "rental_start_date": "2024-04-01",
-      "rental_end_date": "2024-04-15"
+      "rental_end_date": "2024-04-15",
+      "imgDir": "https://i.dr.com.tr/cache/500x400-0/originals/0000000394015-1.jpg"
     },
     {
       "title": "1984",
@@ -16,7 +17,8 @@
       "page_count": 328,
       "topic": "Dystopian society and government surveillance",
       "rental_start_date": "2024-03-20",
-      "rental_end_date": "2024-04-03"
+      "rental_end_date": "2024-04-03",
+      "imgDir": "https://i.dr.com.tr/cache/500x400-0/originals/0000000064038-1.jpg"
     },
     {
       "title": "Mockingbird",
@@ -25,7 +27,8 @@
       "page_count": 281,
       "topic": "Racial injustice in the Deep South",
       "rental_start_date": "2024-01-15",
-      "rental_end_date": "2024-01-29"
+      "rental_end_date": "2024-01-29",
+      "imgDir": "https://i.dr.com.tr/cache/500x400-0/originals/0000000339306-1.jpg"
     },
     {
       "title": "The Great Gatsby",
@@ -34,7 +37,8 @@
       "page_count": 218,
       "topic": "The American dream and 1920s society",
       "rental_start_date": "2024-02-12",
-      "rental_end_date": "2024-02-26"
+      "rental_end_date": "2024-02-26",
+      "imgDir": "https://i.dr.com.tr/cache/500x400-0/originals/0000000419558-1.jpg"
     },
     {
       "title": "Pride and Prejudice",
@@ -43,7 +47,8 @@
       "page_count": 432,
       "topic": "British gentry, marriage, and morality",
       "rental_start_date": "2024-05-01",
-      "rental_end_date": "2024-05-15"
+      "rental_end_date": "2024-05-15",
+      "imgDir": "https://i.dr.com.tr/cache/500x400-0/originals/0000000564545-1.jpg"
     },
     {
       "title": "The Hobbit",
@@ -52,7 +57,8 @@
       "page_count": 310,
       "topic": "A hobbit's quest to win a share of the treasure guarded by a dragon",
       "rental_start_date": "2024-03-01",
-      "rental_end_date": "2024-03-15"
+      "rental_end_date": "2024-03-15",
+      "imgDir": "https://i.dr.com.tr/cache/500x400-0/originals/0000000244198-1.jpg"
     },
     {
       "title": "The Catcher in the Rye",
@@ -61,7 +67,8 @@
       "page_count": 234,
       "topic": "Teenage angst and alienation",
       "rental_start_date": "2024-04-10",
-      "rental_end_date": "2024-04-24"
+      "rental_end_date": "2024-04-24",
+      "imgDir": "https://i.dr.com.tr/cache/500x400-0/originals/0000000327263-1.jpg"
     },
 
     {
@@ -71,7 +78,8 @@
       "page_count": 311,
       "topic": "A dystopian future society based on technological advances",
       "rental_start_date": "2024-02-15",
-      "rental_end_date": "2024-03-01"
+      "rental_end_date": "2024-03-01",
+      "imgDir": "https://i.dr.com.tr/cache/500x400-0/originals/0000000384920-1.jpg"
     },
     {
       "title": "The Fault in Our Stars",
@@ -80,7 +88,8 @@
       "page_count": 313,
       "topic": "The story of cancer patients finding love",
       "rental_start_date": "2024-03-10",
-      "rental_end_date": "2024-03-24"
+      "rental_end_date": "2024-03-24",
+      "imgDir": "https://i.dr.com.tr/cache/500x400-0/originals/0000000425452-1.jpg"
     }
   ]
 }
