@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import userDatas from "../users.json";
 
 const RentedBooks = ({ rentedBooks }) => {
-  console.log("rentedbooks", rentedBooks);
   return (
     <div className="rented">
       <header className="header">

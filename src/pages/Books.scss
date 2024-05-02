@@ -116,6 +116,11 @@
           color: #095256;
           transition: ease-in-out 400ms;
         }
+        &.rented {
+          opacity: 0.5;
+          background-color: #aec6cf;
+          color: antiquewhite;
+        }
       }
     }
   }

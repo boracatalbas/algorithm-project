@@ -28,14 +28,23 @@ export default function Books({ rentedBooks, setRentedBooks }) {
   }, [rentedBooks]);
 
   const handleRent = (book) => {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const startOfDay = new Date(startDate);
+    startOfDay.setHours(0, 0, 0, 0);
+
     if (currentUser.name === "Select User") {
       alert("Please select a user before renting a book");
       return;
     }
 
-    const today = new Date();
-    if (startDate <= today) {
+    if (startOfDay < today) {
       alert("Please select a start date that is not in the past");
+      return;
+    }
+    if (endDate.getTime() === startDate.getTime()) {
+      alert("End date and start date must be different");
       return;
     }
 
@@ -138,7 +147,7 @@ export default function Books({ rentedBooks, setRentedBooks }) {
               />
             </div>
             <button
-              className="button"
+              className={`button ${bookStatus[book.title] ? "rented" : "rent"}`}
               onClick={() => handleRent(book)}
               disabled={bookStatus[book.title]}
             >
