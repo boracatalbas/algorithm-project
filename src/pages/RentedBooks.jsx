@@ -27,7 +27,7 @@ const RentedBooks = ({ rentedBooks }) => {
               (book) => book.userId === user.id
             );
             return (
-              <div key={user.id}>
+              <div key={user.id} className="wrapper">
                 <h2 className="user-name">{user.name}</h2>
                 <div className="content">
                   {userBooks.map((book, index) => (
